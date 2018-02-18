@@ -49,7 +49,7 @@ public class DetailWeatherCardsAdapter extends RecyclerView.Adapter<DetailWeathe
         holder.tempS.setText(temp);
         Picasso.with(mContext)
                 .load("http://openweathermap.org/img/w/" + data1.get(position).getWeather().get(0).getIcon() + ".png")
-                .error(R.drawable.icon_white)
+                .error(R.mipmap.icon_white)
                 .into(holder.imgS);
 
     }

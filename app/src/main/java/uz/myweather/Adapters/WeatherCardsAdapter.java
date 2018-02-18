@@ -35,7 +35,7 @@ public class WeatherCardsAdapter extends RecyclerView.Adapter<WeatherCardsAdapte
         holder.temp.setText(String.valueOf(data.get(position).getMain().getTemp().intValue() + "ºC"));
         Picasso.with(mContext)
                 .load("http://openweathermap.org/img/w/" + data.get(position).getWeather().get(0).getIcon() + ".png")
-                .error(R.drawable.icon_white)
+                .error(R.mipmap.icon_white)
                 .into(holder.img);
 
     }

@@ -71,7 +71,6 @@ public class SingleWeatherFragment extends Fragment implements OnBackPressedList
     private MyList mMyList;
     private DetailWeatherCardsAdapter mAdapter;
     private List<MyList> data = new ArrayList<>();
-    private ImageView ll;
 
     public SingleWeatherFragment() {
     }
@@ -104,7 +103,6 @@ public class SingleWeatherFragment extends Fragment implements OnBackPressedList
         snglImg = mView.findViewById(R.id.snglImg);
         mTemp = mView.findViewById(R.id.snglTemp);
         mDetail = mView.findViewById(R.id.detail);
-        ll = mView.findViewById(R.id.ll);
         mAdapter = new DetailWeatherCardsAdapter();
         RecyclerView rv = mView.findViewById(R.id.snglRecyclerView);
         rv.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
@@ -181,7 +179,7 @@ public class SingleWeatherFragment extends Fragment implements OnBackPressedList
                 }
             }
         }
-
+        // жизнь - боль с этим API
         refreshDetailWeatherData(newList1, newList2);
     }
 
@@ -200,12 +198,8 @@ public class SingleWeatherFragment extends Fragment implements OnBackPressedList
         mCityWeather.setText(cityWeather);
         Picasso.with(mContext)
                 .load("http://openweathermap.org/img/w/" + mMyList.getWeather().get(0).getIcon() + ".png")
-                .error(R.drawable.icon_white)
+                .error(R.mipmap.icon_white)
                 .into(snglImg);
-        Picasso.with(mContext)
-                .load(Const.getImgUrl(0))
-                .error(R.drawable.icon_white)
-                .into(ll);
         mTemp.setText(mMyList.getMain().getTemp().intValue() + "ºC");
         mDetail.setText(detail);
     }
