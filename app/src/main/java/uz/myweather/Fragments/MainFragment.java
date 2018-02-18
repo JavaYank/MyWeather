@@ -93,7 +93,7 @@ public class MainFragment extends Fragment {
             public void onItemClick(View view, int position) {
                 Log.d(TAG, "onItemClick: position " + position);
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.containerFragment, new SingleWeatherFragment(mContext, position, data));
+                transaction.replace(R.id.containerFragment, new SingleWeatherFragment(mContext, position, data.get(position)));
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

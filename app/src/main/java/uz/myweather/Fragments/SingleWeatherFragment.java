@@ -76,10 +76,10 @@ public class SingleWeatherFragment extends Fragment implements OnBackPressedList
     }
 
     @SuppressLint("ValidFragment")
-    public SingleWeatherFragment(Context context, int position, List<MyList> data) {
+    public SingleWeatherFragment(Context context, int position, MyList data) {
         this.mContext = context;
         this.position = position;
-        this.mMyList = data.get(0);
+        this.mMyList = data;
     }
 
     @Nullable
